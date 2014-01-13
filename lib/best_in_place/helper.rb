@@ -40,7 +40,7 @@ module BestInPlace
       end
 
       out = "<span class='#{classes.join(" ")}'"
-      out << " id='#{attribute_escape(opts[:id])}'" unless opts[:id].blank? else " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field)}'"
+      out << " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field)}'"
       out << " data-url='#{opts[:path].blank? ? url_for(object) : url_for(opts[:path])}'"
       out << " data-object='#{opts[:object_name] || BestInPlace::Utils.object_to_key(real_object)}'"
       out << " data-collection='#{attribute_escape(collection)}'" unless collection.blank?
@@ -54,6 +54,7 @@ module BestInPlace
       out << " data-use-confirm='#{opts[:use_confirm]}'" unless opts[:use_confirm].nil?
       out << " data-type='#{opts[:type]}'"
       out << " data-inner-class='#{opts[:inner_class]}'" if opts[:inner_class]
+      out << " data-inner-id='#{opts[:inner_id]}'" if opts[:inner_id]
       out << " data-html-attrs='#{opts[:html_attrs].to_json}'" unless opts[:html_attrs].blank?
       out << " data-original-content='#{attribute_escape(real_object.send(field))}'" if opts[:display_as] || opts[:display_with]
       out << " data-value='#{attribute_escape(value)}'" if value
