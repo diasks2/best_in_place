@@ -40,7 +40,7 @@ module BestInPlace
       end
 
       out = "<span class='#{classes.join(" ")}'"
-      out << " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field)}'"
+      out << " id='#{attribute_escape(opts[:id])}'" unless opts[:id].blank? else " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field)}'"
       out << " data-url='#{opts[:path].blank? ? url_for(object) : url_for(opts[:path])}'"
       out << " data-object='#{opts[:object_name] || BestInPlace::Utils.object_to_key(real_object)}'"
       out << " data-collection='#{attribute_escape(collection)}'" unless collection.blank?
