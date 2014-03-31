@@ -47,6 +47,7 @@ module BestInPlace
       out << " data-attribute='#{field}'"
       out << " data-activator='#{opts[:activator]}'" unless opts[:activator].blank?
       out << " data-ok-button='#{opts[:ok_button]}'" unless opts[:ok_button].blank?
+      out << " data-dbl-click='#{opts[:dbl_click]}'" unless opts[:dbl_click].blank?
       out << " data-ok-button-class='#{opts[:ok_button_class]}'" unless opts[:ok_button_class].blank?
       out << " data-cancel-button='#{opts[:cancel_button]}'" unless opts[:cancel_button].blank?
       out << " data-cancel-button-class='#{opts[:cancel_button_class]}'" unless opts[:cancel_button_class].blank?
